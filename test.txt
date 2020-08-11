@@ -1,0 +1,24 @@
+// 绘图语言样例程序
+
+// 设置原点
+origin is (600, 300);
+// 设置比例
+scale is (80, 80/3);
+// 设置旋转
+rot is pi/2+0*pi/3;
+// 描点作图
+for T from -pi to pi step pi/1000 draw (2.5*cos(t), 2.5*sin(t));
+// 设置旋转
+rot is pi/2+2*pi/3;
+// 描点作图
+for T from -pi to pi step pi/1000 draw (2.5*cos(t), 2.5*sin(t));
+// 设置旋转
+rot is pi/2-2*pi/3;
+// 描点作图
+for T from -pi to pi step pi/1000 draw (2.5*cos(t), 2.5*sin(t));
+// 设置比例
+scale is (1,1);
+// 设置旋转
+rot is 0;
+// 描点作图
+for T from -pi to pi step pi/500 draw (150*cos(t), 150*sin(t));
