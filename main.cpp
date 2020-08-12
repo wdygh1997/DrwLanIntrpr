@@ -16,7 +16,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT Message, WPARAM wParam, LPARAM lParam)
         case WM_PAINT:
             PAINTSTRUCT pt;
             BeginPaint(hWnd, &pt);
-            Parser(SrcFilePath);
+            Parser(SrcFilePath); // 构造语法树，其中已嵌入循环描点绘图函数
             EndPaint(hWnd, &pt);
         default:
             return DefWindowProc(hWnd, Message, wParam, lParam);
@@ -43,8 +43,8 @@ bool PrepareWindow(HINSTANCE hInst, int nCmdShow)
     ShowWindow(hWnd, nCmdShow);
     UpdateWindow(hWnd);
     SetCursor(LoadCursor(hInst, IDC_ARROW));
-
     hDC = GetDC(hWnd);
+
     return true;
 }
 
@@ -80,10 +80,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     if (!CheckSrcFile(lpCmdLine)) // 检查绘图语言源文件合法性
         return 1;
 
-    Parser(SrcFilePath);
+    Parser(SrcFilePath); // 构造语法树，其中已嵌入循环描点绘图函数
 
     MSG Msg;
-    while (GetMessage(&Msg, nullptr, 0, 0))
+    while (GetMessage(&Msg, nullptr, 0, 0)) // 消息循环
     {
         TranslateMessage(&Msg);
         DispatchMessage(&Msg);

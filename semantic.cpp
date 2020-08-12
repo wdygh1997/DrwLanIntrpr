@@ -69,8 +69,8 @@ void DrawLoop(double Start, double End, double Step, ExprNode *HorPtr, ExprNode 
     double x, y;
     for (Parameter = Start; Parameter <= End; Parameter += Step)
     {
-        CalcCoord(HorPtr, VerPtr, x, y);
-        DrawPixel((unsigned long)x, (unsigned long)y);
+        CalcCoord(HorPtr, VerPtr, x, y); // 计算点坐标
+        DrawPixel((unsigned long)x, (unsigned long)y); // 绘制一个点
     }
 }
 

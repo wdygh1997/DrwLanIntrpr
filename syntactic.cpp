@@ -215,15 +215,15 @@ void ForStatement()
     MatchToken(DRAW);
     MatchToken(L_BRACKET);
 
-    x_ptr = Expression();
+    x_ptr = Expression(); // 计算表达式的值，为绘图点横坐标的值
 
     MatchToken(COMMA);
 
-    y_ptr = Expression();
+    y_ptr = Expression(); // 计算表达式的值，为绘图点纵坐标的值
 
     MatchToken(R_BRACKET);
 
-    DrawLoop(Start, End, Step, x_ptr, y_ptr);
+    DrawLoop(Start, End, Step, x_ptr, y_ptr); // 循环描点绘图
 
     DelExprTree(x_ptr);
     DelExprTree(y_ptr);
