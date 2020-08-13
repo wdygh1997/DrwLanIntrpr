@@ -81,9 +81,9 @@ void OriginStatement(); // Origin语句
 void RotStatement(); // Rot语句
 void ScaleStatement(); // Scale语句
 void ForStatement(); // For语句
-ExprNode *Expression(); // 表达式、二元加减运算表达式
+ExprNode *Expression(); // 表达式、加减运算表达式
 ExprNode *Term(); // 乘除运算表达式
-ExprNode *Factor(); // 一元加减运算表达式
+ExprNode *Factor(); // 正负运算表达式
 ExprNode *Component(); // 幂运算表达式
 ExprNode *Atom(); // 原子表达式
 
